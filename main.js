@@ -10,6 +10,10 @@ $(document).ready(function() {
     $('form').on('submit', function(e) {
         e.preventDefault();
         const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
+        if(enderecoDaNovaImagem == ''){
+            alert('Insira um link válido!')
+            return;
+        }
         const novoItem = $('<li style="display: none"></li>');
         $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
         $(`
